@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<main class="main container">
+  Hello world, this is the index template
+  {% assign products = site.products | where_exp: 'product', 'product.published != false' %}
+  {% for product in products %}
+    {% include product.html product=product %}
+  {% endfor %}
+</main>
+
+{% comment %}
+{% include showcase.html %}
+
+<div class="row">
+  <div class="col col-6 xs-col-12">
+    <h2><a href="/updates/" class="underline">Updates</a></h2>
+  </div>
+  <ul class="col col-6 xs-col-12">
+    {% assign posts = site.posts | where_exp: 'post', 'post.published != false' %}
+    {% for post in posts limit:site.news_limit %}
+      {% include update-item.html %}
+    {% endfor %}
+  </ul>
+</div>
+{% endcomment %}

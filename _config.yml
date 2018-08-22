@@ -1,0 +1,61 @@
+title: justinjaywang
+timezone: America/Los_Angeles
+url: https://store.justinjay.wang
+description: A store of products designed by Justin Jay Wang.
+collections:
+  posts:
+    title: Posts
+    output: false
+  uploads:
+    title: Uploads
+    output: true
+  products:
+    title: Products
+    output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: products
+  values:
+    permalink: "/products/:title/"
+    layout: product
+    price: 
+    images:  
+permalink: pretty
+exclude:
+- Gemfile
+- Gemfile.lock
+- README*
+- '.gitignore'
+- node_modules
+- Gruntfile.js
+- package.json
+plugins:
+- jekyll-sitemap
+- jekyll-redirect-from
+- jekyll-seo-tag
+twitter:
+  username: justinjaywang
+logo: /assets/images/avatar.png
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+highlighter: rouge
+excerpt_separator: |2+
+
+
+
+sass:
+  sass_dir: assets/styles/
+  style: compressed
+repository: justinjaywang/store
+version: "1.0.0"
+google_analytics: UA-15132368-16
+nav:
+- text: About
+  link: /about/

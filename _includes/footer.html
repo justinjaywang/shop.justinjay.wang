@@ -1,0 +1,9 @@
+<footer class="footer container">
+  {% capture nav__items %}
+    <ul>
+      {% for item in site.nav %}
+        <li class="inline"><a href="{{ item.link }}">{{ item.text }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endcapture %}{{ nav__items | normalize_whitespace | replace: '> <', '><' }}
+</footer>

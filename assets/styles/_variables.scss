@@ -1,0 +1,43 @@
+// typography
+// ----------
+
+$font-size--html:    16px;
+$font-size--html-md: 14px;
+
+$font-size--normal: 1em;
+$font-size--small:  0.75em;
+
+$courier: Courier, "Courier New", monospace;
+
+$font-family--body:      $courier;
+
+$line-height--normal: 1.4;
+
+// sizing and spacing
+// ------------------
+
+$v: $line-height--normal * 1rem;
+
+// grid
+// ----
+
+$max-width--container: 1080px;
+
+// xs | sm | md | lg | xl
+$bp-xs-sm: 576px;  // 36rem;
+$bp-sm-md: 864px;  // 54rem;
+$bp-md-lg: 1152px; // 72rem;
+$bp-lg-xl: 1440px; // 90rem;
+
+$g:               $v*0.8;
+$outer-gutter:    $g;
+$outer-gutter-sm: $g*0.833333;
+$gutter:          $g;
+$gutter-sm:       $g*0.833333;
+
+// miscellaneous
+// -------------
+
+$opacity--light:    0.6;
+$opacity--lighter:  0.5;
+$opacity--lightest: 0.4;
