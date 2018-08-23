@@ -1,9 +1,16 @@
 <footer class="footer container">
-  {% capture nav__items %}
-    <ul>
-      {% for item in site.nav %}
-        <li class="inline"><a href="{{ item.link }}">{{ item.text }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endcapture %}{{ nav__items | normalize_whitespace | replace: '> <', '><' }}
+  Made by <a class="fade" href="https://justinjay.wang">JJW</a>, more stuff to come
+  {% comment %}
+    {% if page.layout == 'index' %}
+      {% capture nav__items %}
+        <ul>
+          {% for item in site.nav %}
+            <li class="inline"><a href="{{ item.link }}" class="fade">{{ item.text }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endcapture %}{{ nav__items | normalize_whitespace | replace: '> <', '><' }}
+    {% else %}
+      <a href="/" class="fade">Back to Store</a>
+    {% endif %}
+  {% endcomment %}
 </footer>

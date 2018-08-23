@@ -1,23 +1,25 @@
-This is the product include with product title {{ product.title }}
-
-{% comment %}
-<div class="showcase js-showcase">
-  {% for work_title in page.showcase %}
-    {% assign work = site.work | where_exp: 'work', 'work.title == work_title' | first %}
-    <figure class="showcase-item{% if forloop.first %} showcase-item--active{% endif %} js-showcase-item js-lazy js-manual-lazy" data-src="{{ work.showcase }}" data-title="{{ work.title }}" style="background-image: url('{{ work.showcase }}')"></figure>
-  {% endfor %}
-</div>
-<div class="showcase-captions">
-  {% for work_title in page.showcase %}
-    {% assign work = site.work | where_exp: 'work', 'work.title == work_title' | first %}
-    <div class="row">
-      <div class="col col-6 xs-col-12 ml-auto">
-        <div class="showcase-caption{% if forloop.first %} showcase-caption--active{% endif %} js-showcase-caption">
-          {% include work-preview.html work=work %}
-          <span class="showcase__count">{{ forloop.index }}/{{ page.showcase.size }}</span>
-        </div>
+<div class="product container">
+  <div style="overflow: hidden;">
+    <div class="showcase js-showcase">
+      {% for image in product.images %}
+        <figure class="showcase-item{% if forloop.first %} showcase-item--active{% endif %} js-showcase-item js-lazy js-manual-lazy" data-src="{{ image }}" data-title="{{ product.title }}" style="background-image: url('{{ image }}')"></figure>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+    <header class="product__header col col-6 xs-col-12">
+      <h1 class="product__title">{{ product.title }}</h1>
+      <h6 class="product__price">{{ product.price }}</h6>
+      {% assign encoded_title = product.title | replace: ' ', '%20' %}
+      {% assign encoded_price = product.price | replace: '$', '%24' %}
+      <a class="button product__button" target="_blank" href="mailto:store@justinjay.wang?subject={{ encoded_title }},%20{{ encoded_price }}&body=Thanks%20for%20your%20interest%21%20Please%20fill%20out%20and%20send%20over%20the%20info%20below.%20I%27ll%20follow%20up%20with%20a%20payment%20request%20and%20once%20received%2C%20your%20order%20will%20ship%20in%203–5%20days.%0D%0A%0D%0A---%0D%0AFull%20Name%3A%20%0D%0AT-Shirt%20Size%20(S,%20M,%20L,%20XL)%3A%20%0D%0AQuantity%3A%20%0D%0AShipping%20Address%3A%20%0D%0AGoogle%20Pay%20Email%20or%20Venmo%20Handle%3A%20%0D%0AAdditional%20Notes%3A%20">
+        Order Now
+      </a>
+    </header>
+    <div class="col col-6 xs-col-12">
+      <div class="product__content rte">
+        {{ product.content | markdownify }}
       </div>
     </div>
-  {% endfor %}
+  </div>
 </div>
-{% endcomment %}

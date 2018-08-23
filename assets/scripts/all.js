@@ -27,7 +27,7 @@ var initLazyLoad = function () {
     },
     errorClass: 'js-lazy-error',
     loadInvisible: true
-  });
+  })
   lazy.load(
     document.querySelectorAll('.js-manual-lazy') // force load these ones
   );
@@ -42,25 +42,15 @@ var initShowcase = function () {
     wrapAround: true,
     prevNextButtons: false,
     pageDots: true,
-    autoPlay: 3000,
+    autoPlay: false,
     selectedAttraction: 0.15,
     friction: 0.72,
     percentPosition: true
   });
-  // flickity.on('change', function () {
-  //   setShowcaseCaption(flickity.selectedIndex);
-  // });
   flickity.on('staticClick', function() {
     flickity.next();
   });
 };
-// var setShowcaseCaption = function (i) {
-//   var captionEls = document.querySelectorAll('.js-showcase-caption');
-//   for (j=0; j<captionEls.length; j++) {
-//     captionEls[j].classList.remove('showcase-caption--active');
-//   }
-//   captionEls[i].classList.add('showcase-caption--active');
-// };
 
 document.addEventListener('DOMContentLoaded', function () {
 
