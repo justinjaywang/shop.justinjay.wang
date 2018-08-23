@@ -266,6 +266,18 @@ sup {
 .header {
   margin-top: $v*3;
   margin-bottom: $v*4.5;
+  @media (max-width: $bp-sm-md) {
+    margin-top: $v*2;
+    margin-bottom: $v*3;
+  }
+}
+.footer {
+  margin-top: $v*4.5;
+  margin-bottom: $v*3;
+  @media (max-width: $bp-sm-md) {
+    margin-top: $v*3;
+    margin-bottom: $v*2;
+  }
 }
 .header,
 .footer {
@@ -273,10 +285,6 @@ sup {
 }
 .header__logo {
   max-width: 195/16*1em;
-}
-.footer {
-  margin-top: $v*4.5;
-  margin-bottom: $v*3;
 }
 
 // main
