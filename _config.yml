@@ -53,7 +53,7 @@ excerpt_separator: |2+
 sass:
   sass_dir: assets/styles/
   style: compressed
-repository: justinjaywang/store
+repository: justinjaywang/store.justinjay.wang
 version: "1.0.0"
 google_analytics: UA-15132368-16
 nav:
