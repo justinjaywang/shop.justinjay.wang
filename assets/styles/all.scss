@@ -444,7 +444,7 @@ sup {
 .js {
   .js-lazy {
     opacity: 0;
-    @include transition(opacity $duration--normal);
+    @include transition(opacity $duration--slow);
   }
   .js-post-lazy-loaded {
     opacity: 1;

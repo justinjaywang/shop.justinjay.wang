@@ -59,3 +59,5 @@ google_analytics: UA-15132368-16
 nav:
 - text: About
   link: /about/
+footer: |-
+  Made by [JJW](https://justinjay.wang/){:class="fade"}
