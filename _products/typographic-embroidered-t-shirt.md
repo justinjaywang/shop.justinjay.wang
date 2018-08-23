@@ -6,6 +6,7 @@ price: "$25"
 images:
 - "/uploads/typographic-embroidered-t-shirt-1.jpg"
 - "/uploads/typographic-embroidered-t-shirt-2.png"
+image: "/uploads/typographic-embroidered-t-shirt-1.jpg"
 ---
 
 Features a stylized version of the Chinese character 素 (*sù*), which can be [translated](https://en.wiktionary.org/wiki/%E7%B4%A0){:target="_blank"} as "plain, simple, unadorned, raw, native."

@@ -43,8 +43,3 @@ grunt
 ## bump versions
 
 - edit `package.json` and `_config.yml`
-
----
-## TO DO
-- favicon
-- site.image
