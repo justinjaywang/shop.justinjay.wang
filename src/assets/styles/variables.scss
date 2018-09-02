@@ -7,16 +7,18 @@ $color--bg: #fff;
 // typography
 // ----------
 
-$font-size--html:    16px;
-$font-size--html-md: 14px;
+$font-size--html:    21px;
+$font-size--html-lg: 18px;
+$font-size--html-md: 16px;
 
 $font-size--normal: 1em;
 $font-size--small:  0.75em;
 
 // $font-family--body: 'IBM Plex Mono','Cousine', 'Roboto Mono', Courier,'Courier New',monospace;
 // $font-family--body: 'Cousine', 'Roboto Mono', Courier,'Courier New',monospace;
-$font-family--body: 'Roboto Mono', Courier,'Courier New',monospace;
+// $font-family--body: 'Roboto Mono', Courier,'Courier New',monospace;
 // $font-family--body: Courier,'Courier New',monospace; // TEMP
+$font-family--body: Times, 'Times New Roman', serif;
 
 $font-weight--body: 400;
 

@@ -1,26 +1,27 @@
 <header class="header">
-  <div class="container">
-    <nav class="header__nav">
-      <ul class="header__nav__left">
-        {% for link in linklists[section.settings.menu].links %}
-          <li>
-            <a href="{{ link.url }}" class="fade">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-      <a href="/" class="header__logo">
-        {% include 'justinjaywang' %}
+  <a href="/" class="header__logo fade">
+    {% include 'justinjaywang' %}
+  </a>
+
+  <nav class="header__nav">
+    <ul class="header__nav-item header__nav-item--left">
+      {% for link in linklists[section.settings.menu].links %}
+        <li>
+          <a href="{{ link.url }}" class="fade">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="header__nav-item header__nav-item--right">
+      <a href="/cart" class="fade">
+        {{ 'layout.cart.title' | t }}
+        {% if cart.item_count > 0 %}
+          ({{ cart.item_count }})
+        {% endif %}
       </a>
-      <div class="header__nav__right">
-        <a href="/cart" class="fade">
-          {{ 'layout.cart.title' | t }}
-          {% if cart.item_count > 0 %}
-            ({{ cart.item_count }}){% comment %} {{ 'layout.cart.items_count' | t: count: cart.item_count }}){% endcomment %}
-          {% endif %}
-        </a>
-      </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
+
 </header>
 
 {% schema %}

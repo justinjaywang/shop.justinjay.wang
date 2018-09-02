@@ -12,11 +12,7 @@
   },
   "layout": {
     "cart": {
-      "title": "Cart",
-      "items_count": {
-        "one": "item",
-        "other": "items"
-      }
+      "title": "Cart"
     }
   },
   "products": {
