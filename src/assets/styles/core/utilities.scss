@@ -1,0 +1,26 @@
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+
+.cover {
+  background-size: cover;
+  background-position: center;
+}
+.contain {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fade {
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: $opacity--faded;
+  }
+}

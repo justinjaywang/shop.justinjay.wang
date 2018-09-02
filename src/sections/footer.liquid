@@ -1,0 +1,22 @@
+<footer class="footer">
+  {% if template.name == 'index' %}
+    {{ section.settings.footer_text | escape }}
+  {% elsif template.name == 'product' %}
+    This is the product footer
+    {% comment %}TEMP{% endcomment %}
+  {% endif %}
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Footer text",
+        "default": "Thanks for stopping by"
+      }
+    ]
+  }
+{% endschema %}

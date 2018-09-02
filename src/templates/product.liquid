@@ -1,0 +1,13 @@
+{% for image in product.images %}
+  {{ image }}
+  {{ image.alt }}
+  {{ image.src }}
+  {{ image.src | img_url: '160x160' }}
+  {{ image.src | img_url: '1500x' }}
+{% endfor %}
+
+<h1>{{ product.title }}</h1>
+<p>{{ product.vendor }}</p>
+<div class="rte">
+  {{ product.description }}
+</div>

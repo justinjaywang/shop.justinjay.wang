@@ -1,0 +1,35 @@
+{
+  "cart": {
+    "general": {
+      "note": "Special instructions for seller",
+      "subtotal": "Subtotal",
+      "shipping_at_checkout": "Shipping & taxes calculated at checkout",
+      "checkout": "Check Out",
+      "empty": "Your cart is empty.",
+      "continue_browsing":
+        "Start Shopping"
+    }
+  },
+  "layout": {
+    "cart": {
+      "title": "Cart",
+      "items_count": {
+        "one": "item",
+        "other": "items"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "on_sale": "On Sale",
+      "regular_price": "Regular price",
+      "sale_price": "Sale price"
+    }
+  },
+  "sections": {
+    "slideshow": {
+      "pause_slideshow": "Pause slideshow",
+      "play_slideshow": "Play slideshow"
+    }
+  }
+}

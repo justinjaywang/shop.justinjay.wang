@@ -1,0 +1,6 @@
+{% if cart.item_count > 0 %}
+  This is the cart template
+{% else %}
+  <p>{{ 'cart.general.empty' | t }}</p>
+  <a href="/" class="button">{{ 'cart.general.continue_browsing' | t }}</a>
+{% endif %}

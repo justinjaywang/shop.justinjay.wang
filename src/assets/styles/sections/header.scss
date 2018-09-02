@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: $v*0.75;
+  padding-bottom: $v*0.75;
+  text-align: center;
+}
+.header__logo svg {
+  max-width: 220/16*1em;
+}
+.header__nav {
+  position: relative;
+}
+.header__nav__left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.header__nav__right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

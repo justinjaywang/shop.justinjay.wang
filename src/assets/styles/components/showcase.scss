@@ -1,0 +1,21 @@
+.showcase {
+  height: 0;
+  padding-bottom: 62.5%;
+  margin-bottom: $v*3;
+}
+.showcase-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  @extend .cover;
+  visibility: hidden;
+  .js & {
+    visibility: visible;
+  }
+}
+
+.showcase-item--active {
+  visibility: visible;
+}
