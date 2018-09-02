@@ -1,6 +1,10 @@
-{% if cart.item_count > 0 %}
-  This is the cart template
-{% else %}
-  <p>{{ 'cart.general.empty' | t }}</p>
-  <a href="/" class="button">{{ 'cart.general.continue_browsing' | t }}</a>
-{% endif %}
+<div class="container container--narrow">
+  {% if cart.item_count > 0 %}
+    This is the cart template
+  {% else %}
+    <div class="align-center">
+      <p class="mbv1-5">{{ 'cart.general.empty' | t }}</p>
+      <a href="/" class="button">{{ 'cart.general.continue_browsing' | t }}</a>
+    </div>
+  {% endif %}
+</div>

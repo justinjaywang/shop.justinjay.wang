@@ -7,10 +7,14 @@
       "checkout": "Check Out",
       "empty": "Your cart is empty.",
       "continue_browsing":
-        "Start Shopping"
+        "Start shopping"
     }
   },
   "layout": {
+    "404": {
+      "message": "Page not found :(",
+      "go_home": "Take take me home"
+    },
     "cart": {
       "title": "Cart"
     }

@@ -23,13 +23,13 @@ sup {
 }
 
 .rte {
-  a {
-    opacity: $opacity--faded;
-    @include transition(opacity $duration--normal);
-    &:hover {
-      opacity: 1;
-    }
-  }
+  // a {
+  //   opacity: $opacity--faded;
+  //   @include transition(opacity $duration--normal);
+  //   &:hover {
+  //     opacity: 1;
+  //   }
+  // }
   h1,
   h2,
   h3,
