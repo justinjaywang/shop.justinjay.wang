@@ -1,32 +1,44 @@
 @charset 'UTF-8';
 
-// Reset
-@import './reset';
+/**
+ * [replace with theme name] | Built with Slate
+ */
+@import '~normalize.css/normalize';
 
 // Settings
-@import './fonts';
 @import './variables';
 
 // Tools
 @import './tools/mixins';
+@import './tools/functions';
 
 // Core
-@import './core/base';
-@import './core/grid';
-@import './core/js';
+@import './core/forms';
+@import './core/helpers';
+@import './core/layout';
+@import './core/media';
+@import './core/responsive-tables';
+@import './core/rte';
 @import './core/typography';
-@import './core/utilities';
 
 // Components
 @import './components/buttons';
-@import './components/showcase';
+@import './components/hero-banner';
+@import './components/icons';
+@import './components/placeholders';
+@import './components/responsive-images';
 
 // Sections
-@import './sections/footer';
-@import './sections/header';
-
-// Snippets
-@import './snippets/product-preview';
+@import './sections/blog-posts';
+@import './sections/collection-list';
+@import './sections/featured-collection';
+@import './sections/image-with-text';
 
 // Templates
+@import './templates/gift_card';
 @import './templates/product';
+
+// TEMP
+#preview-bar-iframe {
+  visibility: hidden;
+}

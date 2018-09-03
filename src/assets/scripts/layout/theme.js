@@ -1,5 +1,12 @@
-import "../../styles/theme.scss";
-import "../../styles/theme.scss.liquid";
+import 'lazysizes/plugins/object-fit/ls.object-fit';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes/plugins/rias/ls.rias';
+import 'lazysizes/plugins/bgset/ls.bgset';
+import 'lazysizes';
+import 'lazysizes/plugins/respimg/ls.respimg';
+
+import '../../styles/theme.scss';
+import '../../styles/theme.scss.liquid';
 
 import {focusHash, bindInPageLinks} from '@shopify/theme-a11y';
 import {cookiesEnabled} from '@shopify/theme-cart';
@@ -15,8 +22,3 @@ if (cookiesEnabled()) {
     'supports-cookies',
   );
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.add('js');
-  // initLazyLoad(); // initialize lazy load
-});

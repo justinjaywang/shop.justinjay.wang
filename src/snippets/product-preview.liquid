@@ -1,9 +1,12 @@
 <div class="product-preview col">
-  {% for image in product.images | limit: 1 %}
-    <a href="{{ product.url }}" class="product-preview__image-link">
-      <img class="product-preview__image" src="{{ image.src | img_url: '1440x' }}" />
-    </a>
-  {% endfor %}
+  {% assign image = product.images[0] %}
+  <a href="{{ product.url }}" class="product-preview__image-link">
+    {% include 'responsive-image' with
+      image: image,
+      max_width: 1080,
+      max_height: 675,
+    %}
+  </a>
 
   <a href="{{ product.url }}" class="fade block">
     <h2>{{ product.title }}</h2>

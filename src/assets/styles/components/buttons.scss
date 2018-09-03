@@ -1,10 +1,11 @@
 .button {
   display: inline-block;
-  background-color: $color--fg;
-  color: $color--bg;
-  padding: $v/3 $v;
-  @include transition(opacity $duration--normal);
-  &:hover {
-    opacity: 0.8;
-  }
+  vertical-align: middle;
+  width: auto;
+  border: 0;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  user-select: none;
+  appearance: none;
 }

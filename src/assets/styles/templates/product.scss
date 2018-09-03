@@ -1,6 +1,7 @@
-.product__images {
-  margin-bottom: $v*1.5;
-}
-.product__button {
-  margin-bottom: $v*1.5;
+.product-single__thumbnail-image {
+  border: 2px solid transparent;
+
+  .active-thumbnail & {
+    border-color: $color-border;
+  }
 }
