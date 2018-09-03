@@ -9,15 +9,30 @@
     table-layout: fixed;
   }
 
-  ul,
-  ol {
-    margin: 0 0 ($grid-gutter / 2) $grid-gutter;
+  a {
+    text-decoration: underline;
+    @extend .fade;
   }
 
-  strong {
-    font-weight: $font-body-bold-weight;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  blockquote,
+  pre,
+  table,
+  img,
+  .img,
+  video,
+  iframe {
+    margin-bottom: $v*0.5;
   }
 }
+
 
 // Allow table to scroll for tables in the RTE since we don't know
 // how many columns they will contain. Class added by JS.

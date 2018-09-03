@@ -1,6 +1,7 @@
 .product-preview {
   width: 50%;
-  margin-bottom: $v*3;
+  margin-bottom: $v*2;
+
   @media (max-width: $bp-xs-sm) {
     width: 100%;
     margin-bottom: $v*2;
@@ -11,11 +12,14 @@
 }
 .product-preview__image {
   width: 100%;
-  margin-bottom: $v*0.25;
+  margin-bottom: $v*1/3;
 }
 .product-preview__image-link {
+  display: block;
   @include transition(opacity $duration--normal);
+
   &:hover {
     opacity: 0.8;
   }
+
 }
