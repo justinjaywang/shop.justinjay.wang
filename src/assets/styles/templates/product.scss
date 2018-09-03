@@ -1,9 +1,14 @@
 .product-single__thumbnail-image {
-  border: 1px solid transparent;
+  // border: 1px solid transparent;
+  @include transition(opacity $duration--normal);
 
-  .active-thumbnail & {
-    border-color: rgba($color--fg, 0.4);
+  &:hover {
+    opacity: 0.8;
   }
+
+  // .active-thumbnail & {
+  //   border-color: rgba($color--fg, 0.4);
+  // }
 }
 
 .product__images {

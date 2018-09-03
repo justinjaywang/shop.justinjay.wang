@@ -94,7 +94,7 @@
 .fade {
   @include transition(opacity $duration--normal);
   &:hover {
-    opacity: $opacity--faded;
+    opacity: 0.4;
   }
 }
 
