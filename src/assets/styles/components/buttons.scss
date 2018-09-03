@@ -5,6 +5,6 @@
   padding: $v/3 $v;
   @include transition(opacity $duration--normal);
   &:hover {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
