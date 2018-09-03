@@ -15,9 +15,7 @@
     <div class="header__nav-item header__nav-item--right">
       <a href="/cart" class="fade">
         {{ 'layout.cart.title' | t }}
-        {% if cart.item_count > 0 %}
-          ({{ cart.item_count }})
-        {% endif %}
+        ({{ cart.item_count }})
       </a>
     </div>
   </nav>
