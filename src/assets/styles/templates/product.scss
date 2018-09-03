@@ -1,7 +1,15 @@
 .product-single__thumbnail-image {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
 
   .active-thumbnail & {
-    border-color: currentColor;
+    border-color: rgba($color--fg, 0.4);
   }
+}
+
+.product__images {
+  margin-bottom: $v*1.5;
+}
+
+.product__button {
+  margin-bottom: $v*1.5;
 }
