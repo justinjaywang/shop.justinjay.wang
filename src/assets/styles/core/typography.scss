@@ -30,12 +30,16 @@ sup {
   //     opacity: 1;
   //   }
   // }
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin-top: $v*1.5;
+  a {
+    text-decoration: underline;
+    @extend .fade;
   }
+  // h1,
+  // h2,
+  // h3,
+  // h4 {
+  //   margin-top: $v*1.5;
+  // }
   h1,
   h2,
   h3,
@@ -54,12 +58,12 @@ sup {
   .img,
   video,
   iframe {
-    margin-bottom: $v*1;
+    margin-bottom: $v*0.5;
   }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @extend strong;
-  }
+  // h1,
+  // h2,
+  // h3,
+  // h4 {
+  //   @extend strong;
+  // }
 }

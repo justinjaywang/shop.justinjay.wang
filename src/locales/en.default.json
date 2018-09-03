@@ -4,8 +4,8 @@
       "note": "Special instructions for seller",
       "subtotal": "Subtotal",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
-      "checkout": "Check Out",
-      "empty": "Your cart is empty.",
+      "checkout": "Check out",
+      "empty": "Hey! Your cart is empty.",
       "continue_browsing":
         "Start shopping"
     }
@@ -22,8 +22,8 @@
   "products": {
     "product": {
       "on_sale": "On Sale",
-      "regular_price": "Regular price",
-      "sale_price": "Sale price"
+      "add_to_cart": "Add to cart",
+      "back_home": "Back to Index"
     }
   },
   "sections": {

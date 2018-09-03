@@ -1,11 +1,11 @@
 .header {
-  margin-top: $v*4;
+  margin-top: $v*3;
   margin-bottom: $v*3;
   @media (max-width: $bp-sm-md) {
   }
 }
 .header__logo {
-  max-width: 10.5em;
+  max-width: 9.5em;
   display: block;
   margin-left: auto;
   margin-right: auto;

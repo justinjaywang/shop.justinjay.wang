@@ -1,13 +1,26 @@
-{% for image in product.images %}
-  {{ image }}
-  {{ image.alt }}
-  {{ image.src }}
-  {{ image.src | img_url: '160x160' }}
-  {{ image.src | img_url: '1500x' }}
-{% endfor %}
-
-<h1>{{ product.title }}</h1>
-<p>{{ product.vendor }}</p>
-<div class="rte">
-  {{ product.description }}
+<div class="product container container--wide">
+  <div class="product__showcase">
+    {% assign n = product.images | size %}
+    {% if n > 1 %}
+      {% for image in product.images %}
+        {{ image.src | img_url: '1140x' }}
+      {% endfor %}
+    {% else %}
+      {% for image in product.images %}
+        <img src="{{ image.src | img_url: '1140x' }}" />
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="row">
+    <div class="col col-5 xs-col-12">
+      <h2>{{ product.title }}</h2>
+      <strong class="block mbv0-5">{{ product.price | money_without_trailing_zeros }}</strong>
+      <a href="" class="button product__button">{{ 'products.product.add_to_cart' | t }}</a>
+    </div>
+    <div class="col col-7 xs-col-12">
+      <div class="rte">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
 </div>

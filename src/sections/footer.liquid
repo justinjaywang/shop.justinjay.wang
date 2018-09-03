@@ -1,10 +1,9 @@
 <footer class="footer">
-  {% if template.name == 'index' %}
+  {% comment %}{% if template.name == 'index' %}
     {{ section.settings.footer_text | escape }}
   {% elsif template.name == 'product' %}
-    This is the product footer
-    {% comment %}TEMP{% endcomment %}
-  {% endif %}
+    <a href="/" class="fade">{{ 'products.product.back_home' | t }}</a>
+  {% endif %}{% endcomment %}
 </footer>
 
 {% schema %}

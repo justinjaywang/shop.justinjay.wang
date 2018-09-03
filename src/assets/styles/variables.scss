@@ -32,8 +32,8 @@ $v: $line-height--normal * 1rem;
 // grid
 // ----
 
-$max-width--container:         49em;
-$max-width--container--narrow: 37.5em;
+$max-width--container:         1140px;
+$max-width--container--narrow: 36em;
 
 // xs | sm | md | lg | xl
 $bp-xs-sm: 576px;  // 36rem;
@@ -50,7 +50,7 @@ $gutter-sm:       $g;
 // miscellaneous
 // -------------
 
-$opacity--faded: 0.4;
+$opacity--faded:        0.4;
 
 $duration--normal: 0.15s;
 $duration--slow:   0.4s;
