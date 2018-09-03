@@ -32,9 +32,10 @@
     "@shopify/theme-rte": "^1.0.0-alpha.7",
     "@shopify/theme-sections": "^1.0.0",
     "@shopify/theme-variants": "^1.0.0-alpha.8",
+    "jquery": "^3.3.1",
+    "lodash-es": "^4.17.4",
     "blazy": "^1.8.2",
     "flickity": "^2.1.2",
-    "flickity-as-nav-for": "^2.0.1",
-    "jquery": "^3.3.1"
+    "flickity-as-nav-for": "^2.0.1"
   }
 }

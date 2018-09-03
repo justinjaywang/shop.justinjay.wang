@@ -1,14 +1,23 @@
-<div class="product container container--wide">
-  <div class="product__showcase">
+<div class="product container container--wide"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  data-enable-history-state="true"
+>
+  <div class="product__images">
     {% assign n = product.images | size %}
     {% if n > 1 %}
-      {% for image in product.images %}
-      <img class="product__showcase__image" src="{{ image.src | img_url: '1440x' }}" />
-      {% endfor %}
-    {% else %}
-      {% for image in product.images %}
-        <img class="product__showcase__image" src="{{ image.src | img_url: '1440x' }}" />
-      {% endfor %}
+      <div class="showcase js-showcase">
+        {% for image in product.images %}
+          <img class="showcase__item{% if forloop.first %} showcase__item--active{% endif %} js-showcase-item" src="{{ image.src | img_url: '1440x' }}" />
+        {% endfor %}
+      </div>
+      <div class="showcase-nav js-showcase-nav">
+        {% for image in product.images %}
+          <img class="showcase-nav__item js-showcase-nav-item" src="{{ image.src | img_url: '100px' }}" />
+        {% endfor %}
+      </div>
+    {% elsif n == 1 %}
+      <img src="{{ product.images[0].src | img_url: '1440x' }}" class="" />
     {% endif %}
   </div>
   <div class="row">
@@ -23,4 +32,10 @@
       </div>
     </div>
   </div>
+
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+  {% endunless %}
 </div>

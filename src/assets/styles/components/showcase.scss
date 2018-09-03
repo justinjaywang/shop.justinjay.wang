@@ -1,21 +1,29 @@
 .showcase {
-  height: 0;
-  padding-bottom: 62.5%;
-  margin-bottom: $v*3;
-}
-.showcase-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
   width: 100%;
-  @extend .cover;
+  margin-bottom: 0.75em;
+  overflow: hiden;
+}
+.showcase__item {
+  width: 100%;
   visibility: hidden;
   .js & {
     visibility: visible;
   }
 }
-
-.showcase-item--active {
+.showcase__item--active {
   visibility: visible;
+}
+
+.showcase-nav {
+}
+.showcase-nav__item {
+  margin-right: 0.75em;
+  width: 5em;
+  cursor: pointer;
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.showcase-nav__item.is-nav-selected {
 }
