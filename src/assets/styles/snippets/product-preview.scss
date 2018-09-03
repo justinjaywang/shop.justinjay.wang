@@ -2,10 +2,11 @@
   width: 50%;
   margin-bottom: $v*3;
   @media (max-width: $bp-sm-md) {
+    width: 100%;
     margin-bottom: $v*2;
   }
 }
-.product-preview:nth-child(3n+3) {
+.product-preview:nth-child(3n+1) {
   width: 100%;
 }
 .product-preview__image {

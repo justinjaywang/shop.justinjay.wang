@@ -23,5 +23,11 @@
     "build": "slate-tools build",
     "deploy": "slate-tools build && slate-tools deploy",
     "zip": "slate-tools build && slate-tools zip"
+  },
+  "dependencies": {
+    "blazy": "^1.8.2",
+    "flickity": "^2.1.2",
+    "flickity-as-nav-for": "^2.0.1",
+    "jquery": "^3.3.1"
   }
 }

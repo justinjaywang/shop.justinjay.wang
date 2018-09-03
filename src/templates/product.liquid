@@ -3,11 +3,11 @@
     {% assign n = product.images | size %}
     {% if n > 1 %}
       {% for image in product.images %}
-        {{ image.src | img_url: '1140x' }}
+      <img class="product__showcase__image" src="{{ image.src | img_url: '1440x' }}" />
       {% endfor %}
     {% else %}
       {% for image in product.images %}
-        <img src="{{ image.src | img_url: '1140x' }}" />
+        <img class="product__showcase__image" src="{{ image.src | img_url: '1440x' }}" />
       {% endfor %}
     {% endif %}
   </div>

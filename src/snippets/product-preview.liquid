@@ -1,7 +1,7 @@
 <div class="product-preview col">
   {% for image in product.images | limit: 1 %}
     <a href="{{ product.url }}">
-      <img class="product-preview__image" src="{{ image.src | img_url: '1140x' }}" />
+      <img class="product-preview__image" src="{{ image.src | img_url: '1440x' }}" />
     </a>
   {% endfor %}
 
