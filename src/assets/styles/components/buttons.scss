@@ -1,6 +1,5 @@
 .button {
   display: inline-block;
-  vertical-align: middle;
   width: auto;
   border: 0;
   text-align: center;
@@ -8,4 +7,11 @@
   text-decoration: none;
   user-select: none;
   appearance: none;
+  background-color: $color--fg;
+  color: $color--bg;
+  padding: $v/4 $v*5/4;
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: $opacity--light;
+  }
 }

@@ -17,7 +17,10 @@ textarea {
 input,
 textarea,
 select {
-  font-size: 1.6rem;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: inherit;
   max-width: 100%;
   border: 1px solid currentColor;
   border-radius: 0;
@@ -27,6 +30,13 @@ select {
     background-color: $color-disabled;
     cursor: default;
   }
+}
+
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: inherit;
 }
 
 button,

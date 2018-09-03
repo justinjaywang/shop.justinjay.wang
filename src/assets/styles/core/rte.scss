@@ -20,6 +20,7 @@
   h4,
   h5,
   h6,
+  p,
   ul,
   ol,
   blockquote,
@@ -32,7 +33,6 @@
     margin-bottom: $v*0.5;
   }
 }
-
 
 // Allow table to scroll for tables in the RTE since we don't know
 // how many columns they will contain. Class added by JS.

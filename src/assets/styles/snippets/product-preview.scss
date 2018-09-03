@@ -19,7 +19,7 @@
   @include transition(opacity $duration--normal);
 
   &:hover {
-    opacity: 0.8;
+    opacity: $opacity--light;
   }
 
 }

@@ -1,9 +1,19 @@
+.product__thumbnails {
+  margin-top: 0.75em;
+}
+
+.product__thumbnail {
+  display: inline-block;
+  margin-right: 0.75em;
+}
+
 .product-single__thumbnail-image {
   // border: 1px solid transparent;
   @include transition(opacity $duration--normal);
+  display: block;
 
   &:hover {
-    opacity: 0.8;
+    opacity: $opacity--light;
   }
 
   // .active-thumbnail & {
@@ -15,6 +25,58 @@
   margin-bottom: $v*1.5;
 }
 
+.product__meta {
+  margin-bottom: $v*0.75;
+}
+
+.product__options {
+  margin-bottom: $v*0.75;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.product__option {
+  display: inline-block;
+
+}
+
+.product__option__label {
+  opacity: $opacity--faded;
+}
+
+.product__option__select {
+  text-align: center;
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  @include transition(opacity $duration--normal);
+  border: 0;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+
+  &:hover {
+    opacity: $opacity--faded;
+  }
+}
+
+.product__option__input {
+  padding: 0 0.2em;
+  @include transition(opacity $duration--normal);
+  border: 0;
+  max-width: 2.5em;
+
+  &:hover {
+    opacity: $opacity--faded;
+  }
+
+  &:focus {
+    opacity: 1;
+  }
+}
+
 .product__button {
   margin-bottom: $v*1.5;
+  display: block;
 }
