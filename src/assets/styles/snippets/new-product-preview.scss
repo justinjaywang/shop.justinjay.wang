@@ -1,0 +1,21 @@
+.product-preview {
+  width: 50%;
+  margin-bottom: $v*3;
+  @media (max-width: $bp-xs-sm) {
+    width: 100%;
+    margin-bottom: $v*2;
+  }
+}
+.product-preview:nth-child(3n+1) {
+  width: 100%;
+}
+.product-preview__image {
+  width: 100%;
+  margin-bottom: $v*0.25;
+}
+.product-preview__image-link {
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: 0.8;
+  }
+}

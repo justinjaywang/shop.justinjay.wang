@@ -1,0 +1,10 @@
+.button {
+  display: inline-block;
+  background-color: $color--fg;
+  color: $color--bg;
+  padding: $v/3 $v;
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: 0.8;
+  }
+}
