@@ -8,31 +8,26 @@
 
 // Settings
 @import './variables';
-@import './new-variables';
 
 // Tools
 @import './tools/mixins';
 @import './tools/functions';
-@import './tools/new-mixins';
 
 // Core
 @import './core/forms';
 @import './core/helpers';
-@import './core/layout';
 @import './core/media';
 @import './core/responsive-tables';
 @import './core/rte';
+@import './core/base';
+@import './core/grid';
 @import './core/typography';
-@import './core/new-base';
-@import './core/new-grid';
-@import './core/new-typography';
 @import './core/new-utilities';
 
 // Components
 @import './components/buttons';
 @import './components/hero-banner';
 @import './components/icons';
-@import './components/placeholders';
 @import './components/responsive-images';
 @import './components/new-buttons';
 
@@ -41,11 +36,11 @@
 @import './sections/collection-list';
 @import './sections/featured-collection';
 @import './sections/image-with-text';
-@import './sections/new-header';
-@import './sections/new-footer';
+@import './sections/header';
+@import './sections/footer';
 
 // Snippets
-@import './snippets/new-product-preview';
+@import './snippets/product-preview';
 
 // Templates
 @import './templates/gift_card';

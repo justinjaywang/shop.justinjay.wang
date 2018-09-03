@@ -23,10 +23,7 @@
 .header__nav-item {
   position: absolute;
   top: 0;
-  padding: $outer-gutter*0.75 $outer-gutter;
-  @media (max-width: $bp-sm-md) {
-    padding: $outer-gutter-sm*0.75 $outer-gutter-sm;
-  }
+  padding: $gutter*0.75 $gutter;
 }
 .header__nav-item--left {
   left: 0;

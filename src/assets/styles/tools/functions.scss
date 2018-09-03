@@ -4,8 +4,8 @@
  */
 @function get-transition-properties($transition) {
   $property: all;
-  $duration: $transition-duration;
-  $easing: $transition-timing;
+  $duration: 250ms;
+  $easing: ease-in-out;
   $delay: null;
 
   $defaultProperties: (

@@ -1,16 +1,7 @@
-// Text colors
-$color-body-text: var(--color-body-text);
+// colors
 
-// Background colors
-$color-body: var(--color-main-background);
-
-// Placeholders
-$placeholder-color-foreground: #161d25;
-$placeholder-color-background: #f9fafb;
-
-// Other colors
-$color-accent: var(--color-accent);
-$color-border: var(--color-border);
+$color--fg: #000;
+$color--bg: #fff;
 
 // Helper colors for form error states
 $color-disabled: #000000;
@@ -20,41 +11,41 @@ $color-error-bg: #ffffff;
 $color-success: #000000;
 $color-success-bg: #000000;
 
-// Typography
-// $font-heading: var(--font-heading);
-// $font-body: var(--font-body);
-// $font-body-weight: var(--font-body-weight);
-// $font-body-style: var(--font-body-style);
-// $font-body-bold-weight: var(--font-body-bold-weight);
+// typography
 
-// Transitions
-$transition-duration: 250ms;
-$transition-timing: ease-in-out;
+$font-size--html:    21px;
+$font-size--html-lg: 18px;
+$font-size--html-md: 16px;
 
-// Grid
-$grid-medium: 46.85em;
-$grid-large: 61.85em;
-$grid-widescreen: 87.5em;
-$grid-max-width: 73.75em;
-$grid-gutter: 30px;
+$font-size--normal: 1em;
+$font-size--small:  0.75em;
 
-// Breakpoints used with the media-query mixin
-$small: 'small';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen: 'widescreen';
+$font-family--body: Times, 'Times New Roman', serif;
+$font-weight--body: 400;
 
-$breakpoints: (
-  $small '(max-width: #{$grid-medium - 1})',
-  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
-  $medium-down '(max-width: #{$grid-large - 1})',
-  $medium-up '(min-width: #{$grid-medium})',
-  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
-  $large-down '(max-width: #{$grid-widescreen - 1})',
-  $large-up '(min-width: #{$grid-large})',
-  $widescreen '(min-width: #{$grid-widescreen})'
-);
+$line-height--normal: 1.4;
+
+// sizing and spacing
+
+$v: $line-height--normal * 1rem;
+
+// grid
+
+$max-width--container:         1080px;
+$max-width--container--narrow: 36em;
+
+// xs | sm | md | lg | xl
+$bp-xs-sm: 576px;  // 36rem;
+$bp-sm-md: 864px;  // 54rem;
+$bp-md-lg: 1152px; // 72rem;
+$bp-lg-xl: 1440px; // 90rem;
+
+$g:      $v*0.833333;
+$gutter: $g;
+
+// miscellaneous
+
+$opacity--faded: 0.4;
+
+$duration--normal: 0.15s;
+$duration--slow:   0.4s;

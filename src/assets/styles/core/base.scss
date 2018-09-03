@@ -3,6 +3,12 @@
 *:after {
   box-sizing: inherit;
 }
+
+body,
+html {
+  height: 100%;
+}
+
 html {
   box-sizing: border-box;
   font-size: $font-size--html;
@@ -13,6 +19,7 @@ html {
     font-size: $font-size--html-md;
   }
 }
+
 body {
   font-size: $font-size--normal;
   font-family: $font-family--body;
@@ -25,27 +32,33 @@ body {
   color: $color--fg;
   background-color: $color--bg;
 }
+
 ::-moz-selection {
   background-color: $color--fg;
   color: $color--bg;
 }
+
 ::selection {
   background-color: $color--fg;
   color: $color--bg;
 }
+
 img,
 video,
 iframe {
   max-width: 100%;
 }
+
 img,
 video {
   height: auto;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 .main {
   display: block;
 }

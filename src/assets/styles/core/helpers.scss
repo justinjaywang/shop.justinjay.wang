@@ -60,9 +60,9 @@
 .skip-link:focus {
   @include visually-shown(absolute);
   z-index: 10000;
-  padding: $grid-gutter / 2;
-  background-color: $color-body;
-  color: $color-body-text;
+  padding: $gutter / 2;
+  background-color: inherit;
+  color: inherit;
   transition: none;
 }
 
