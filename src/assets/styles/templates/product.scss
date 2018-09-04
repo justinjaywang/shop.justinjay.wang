@@ -4,17 +4,17 @@
 }
 
 .product__thumbnail {
+  width: 8em;
   margin-right: 0.75em;
   margin-bottom: 0.75em;
 }
 
 .product-single__thumbnail-image {
-  // border: 1px solid transparent;
   @extend %fade-light;
 
-  // .active-thumbnail & {
-  //   border-color: rgba($color--fg, 0.4);
-  // }
+  .active-thumbnail & {
+    // border: 1px solid currentColor;
+  }
 }
 
 .product__images {
