@@ -5,8 +5,11 @@
   padding-left: $gutter;
   padding-right: $gutter;
 }
+.container--wider {
+  max-width: $max-width--container--wider;
+}
 .container--wide {
-  max-width: $max-width--container;
+  max-width: $max-width--container--wide;
 }
 .container--narrow {
   max-width: $max-width--container--narrow;

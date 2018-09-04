@@ -12,11 +12,11 @@ html {
 html {
   box-sizing: border-box;
   font-size: $font-size--html;
-  @media (max-width: $bp-md-lg) {
-    font-size: $font-size--html-lg;
-  }
   @media (max-width: $bp-sm-md) {
     font-size: $font-size--html-md;
+  }
+  @media (max-width: $bp-xs-sm) {
+    font-size: $font-size--html-sm;
   }
 }
 

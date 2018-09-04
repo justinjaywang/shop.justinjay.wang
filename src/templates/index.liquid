@@ -1,6 +1,6 @@
 {% assign homepage_collection = collections | where: 'title', 'Home page' | first %}
 {% assign products = homepage_collection.products %}
-<div class="container container--wide">
+<div class="container container--wider">
   <div class="row">
     {% for product in products %}
       {% include 'product-preview' %}

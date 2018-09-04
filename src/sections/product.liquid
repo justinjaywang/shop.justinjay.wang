@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" class="container container--wide">
+<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" class="container container--wider">
 
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
@@ -15,7 +15,6 @@
       {% include 'responsive-image' with
         image: image,
         max_width: 1080,
-        max_height: 675,
         image_attributes: "data-product-featured-image",
         wrapper_class: wrapper_class,
         wrapper_attributes: "data-product-image-wrapper",
@@ -85,7 +84,7 @@
                   </select>
                 </div>
               </div>
-              <span class="faded">&ensp;/&emsp;</span>
+              <span class="faded">&ensp;/&ensp;</span>
             {% endfor %}
           {% endunless %}
 

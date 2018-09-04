@@ -13,9 +13,9 @@ $color-success-bg: #000000;
 
 // typography
 
-$font-size--html:    21px;
-$font-size--html-lg: 18px;
-$font-size--html-md: 16px;
+$font-size--html:    20px;
+$font-size--html-md: 18px;
+$font-size--html-sm: 16px;
 
 $font-size--normal: 1em;
 $font-size--small:  0.75em;
@@ -31,8 +31,9 @@ $v: $line-height--normal * 1rem;
 
 // grid
 
-$max-width--container:         1080px;
-$max-width--container--narrow: 36em;
+$max-width--container--wider:  1080px;
+$max-width--container--wide:   720px;
+$max-width--container--narrow: 30em;
 
 // xs | sm | md | lg | xl
 $bp-xs-sm: 576px;  // 36rem;

@@ -1,14 +1,24 @@
 .button {
   display: inline-block;
   width: auto;
-  border: 0;
   text-align: center;
   white-space: nowrap;
   text-decoration: none;
   user-select: none;
   appearance: none;
   background-color: $color--fg;
+  border: 1px solid $color--fg;
   color: $color--bg;
-  padding: $v/3 $v*5/3;
+  padding: $v/3 $v*3/3;
   @extend .fade-light;
+}
+
+.button--light {
+  background-color: $color--bg;
+  border: 1px solid currentColor;
+  color: $color--fg;
+}
+
+.button + .button {
+  margin-left: 0.5em;
 }
