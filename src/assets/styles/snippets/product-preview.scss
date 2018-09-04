@@ -16,10 +16,6 @@
 }
 .product-preview__image-link {
   display: block;
-  @include transition(opacity $duration--normal);
-
-  &:hover {
-    opacity: $opacity--light;
-  }
+  @extend .fade-light
 
 }

@@ -100,6 +100,12 @@
 .faded {
   opacity: $opacity--faded;
 }
+.fade-light {
+  @include transition(opacity $duration--normal);
+  &:hover {
+    opacity: $opacity--light;
+  }
+}
 
 .align-left {
   text-align: left;

@@ -1,0 +1,13 @@
+.cart__item {
+  border-top: 1px solid rgba($color--fg, 0.06);
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+
+  img {
+    display: block;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid rgba($color--fg, 0.06);
+  }
+}

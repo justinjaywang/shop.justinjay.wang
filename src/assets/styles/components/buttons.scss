@@ -9,9 +9,6 @@
   appearance: none;
   background-color: $color--fg;
   color: $color--bg;
-  padding: $v/4 $v*5/4;
-  @include transition(opacity $duration--normal);
-  &:hover {
-    opacity: $opacity--light;
-  }
+  padding: $v/3 $v*5/3;
+  @extend .fade-light;
 }

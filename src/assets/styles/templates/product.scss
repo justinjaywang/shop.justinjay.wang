@@ -9,12 +9,8 @@
 
 .product-single__thumbnail-image {
   // border: 1px solid transparent;
-  @include transition(opacity $duration--normal);
   display: block;
-
-  &:hover {
-    opacity: $opacity--light;
-  }
+  @extend .fade-light;
 
   // .active-thumbnail & {
   //   border-color: rgba($color--fg, 0.4);
