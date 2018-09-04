@@ -1,12 +1,12 @@
 .product__thumbnails {
-  margin-top: 0.75em;
+  margin-top: $v * 0.75;
   display: flex;
 }
 
 .product__thumbnail {
   width: 8em;
-  margin-right: 0.75em;
-  margin-bottom: 0.75em;
+  margin-right: $v * 0.75;
+  margin-bottom: $v * 0.75;
 }
 
 .product-single__thumbnail-image {
