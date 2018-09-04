@@ -170,16 +170,22 @@
         <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
       {% endif %}{% endcomment %}
 
-      <div class="row">
-        <div class="col col-6 xs-col-12">
-          <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
+      <div class="row mbv1-5">
+        <div class="col col-8 xs-col-12">
+          <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="cart__update fade mbv0-5">
         </div>
-        <div class="col col-6 xs-col-12 align-right">
-          <span class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</span>
-          <span class="cart__subtotal-price">{{ cart.total_price | money_without_trailing_zeros }}</span>
-          {% if cart.total_discounts > 0 %}
-            <span>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money_without_trailing_zeros }}</span>
-          {% endif %}
+        <div class="col col-4 xs-col-12">
+          <div class="row">
+            <div class="col col-9">
+              <span>{{ 'cart.general.subtotal' | t }} ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})</span>
+            </div>
+            <div class="col col-3 align-right">
+              <strong>{{ cart.total_price | money_without_trailing_zeros }}</strong>
+              {% if cart.total_discounts > 0 %}
+                <strong>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money_without_trailing_zeros }}</strong>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
 

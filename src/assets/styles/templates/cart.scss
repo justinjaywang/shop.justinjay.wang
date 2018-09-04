@@ -9,5 +9,11 @@
 
   &:last-of-type {
     border-bottom: 1px solid rgba($color--fg, 0.06);
+    margin-bottom: $v*0.75;
   }
+}
+
+.cart__update {
+  padding: 0;
+  border: 0;
 }
