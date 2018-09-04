@@ -11,7 +11,7 @@
 
   a {
     text-decoration: underline;
-    @extend .fade;
+    @extend %fade;
   }
 
   h1,
@@ -30,7 +30,7 @@
   .img,
   video,
   iframe {
-    margin-bottom: $v*0.5;
+    margin-bottom: $v * 0.5;
   }
 }
 

@@ -1,8 +1,6 @@
 .header {
-  margin-top: $v*3;
-  margin-bottom: $v*3;
-  @media (max-width: $bp-sm-md) {
-  }
+  margin-top: $v * 3;
+  margin-bottom: $v * 3;
 }
 .header__logo {
   max-width: 9.5em;
@@ -23,7 +21,7 @@
 .header__nav-item {
   position: absolute;
   top: 0;
-  padding: $gutter*0.75 $gutter;
+  padding: ($gutter * 0.75) $gutter;
 }
 .header__nav-item--left {
   left: 0;

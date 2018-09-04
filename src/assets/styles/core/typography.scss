@@ -1,6 +1,6 @@
 strong,
 b {
-  font-weight: bold;
+  font-weight: 700;
 }
 em,
 i {
@@ -13,11 +13,12 @@ s {
 u {
   text-decoration-line: underline;
 }
+%small,
 small {
   font-size: $font-size--small;
 }
 sup {
-  @extend small;
+  @extend %small;
   position: relative;
   top: -0.25em;
 }

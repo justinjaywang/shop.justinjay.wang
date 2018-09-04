@@ -9,8 +9,8 @@
   background-color: $color--fg;
   border: 1px solid $color--fg;
   color: $color--bg;
-  padding: $v/3 $v*3/3;
-  @extend .fade-light;
+  padding: ($v / 3) $v;
+  @extend %fade-light;
 }
 
 .button--light {
