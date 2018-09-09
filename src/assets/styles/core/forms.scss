@@ -24,6 +24,7 @@ select {
   max-width: 100%;
   border: 1px solid currentColor;
   border-radius: 0;
+  appearance: none;
 
   &[disabled] {
     border-color: $color-disabled-border;
