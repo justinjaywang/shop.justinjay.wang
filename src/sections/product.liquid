@@ -26,7 +26,7 @@
         {%- for image in product.images -%}
           <li class="product__thumbnail">
             <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
-              <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+              <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '120x120', crop: 'center' }}" alt="{{ image.alt | escape }}">
             </a>
           </li>
         {%- endfor -%}
@@ -37,14 +37,19 @@
 
   <div class="row">
 
-    <div class="col col-5 xs-col-12">
+    <div class="col col-5 sm-col-4 xs-col-12">
 
       <div class="product__meta">
         <h1>{{ product.title }}</h1>
 
         <div data-price-wrapper>
           <strong data-product-price>
-            {{ current_variant.price | money_without_trailing_zeros }}
+            {% assign cents = current_variant.price | modulo: 1 %}
+            {% if cents == 0 %}
+              {{ current_variant.price | money_without_trailing_zeros }}
+            {% else %}
+              {{ current_variant.price | money }}
+            {% endif %}
           </strong>
 
           {% if product.compare_at_price_max > product.price %}
@@ -58,51 +63,52 @@
         </div>
       </div>
 
-      <form action="/cart/add" method="post" enctype="multipart/form-data">
+      <form action="/cart/add" method="post" enctype="multipart/form-data" class="product__form">
         
-        <div class="product__options">
-          {% unless product.has_only_default_variant %}
-            {% for option in product.options_with_values %}
-              <div class="product__option">
-                <div class="selector-wrapper js">
-                  <label for="SingleOptionSelector-{{ forloop.index0 }}" class="product__option__label">
-                    {{ option.name }}
-                  </label>
+        {% unless product.has_only_default_variant %}
+          {% for option in product.options_with_values %}
+            <div class="product__option">
+              <div class="selector-wrapper js">
+                {% comment %}<label for="SingleOptionSelector-{{ forloop.index0 }}" class="product__option__label">
+                  {{ option.name }}
+                </label>{% endcomment %}
 
-                  <select
-                    class="product__option__select"
-                    id="SingleOptionSelector-{{ forloop.index0 }}"
-                    data-single-option-selector
-                    data-index="option{{ option.position }}">
-                    {% for value in option.values %}
-                      <option
-                        value="{{ value | escape }}"
-                        {% if option.selected_value == value %}selected="selected"{% endif %}>
-                          {{ value }}
-                      </option>
-                    {% endfor %}
-                  </select>
-                </div>
+                <select
+                  class="product__option__field product__option__select"
+                  id="SingleOptionSelector-{{ forloop.index0 }}"
+                  data-single-option-selector
+                  data-index="option{{ option.position }}">
+                    <option disabled="disabled">
+                      {{ option.name }}
+                    </option>
+                  {% for value in option.values %}
+                    <option
+                      value="{{ value | escape }}"
+                      {% if option.selected_value == value %}selected="selected"{% endif %}>
+                        {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+                <div class="caret"></div>
               </div>
-              <span class="faded">&ensp;/&ensp;</span>
-            {% endfor %}
-          {% endunless %}
+            </div>
+          {% endfor %}
+        {% endunless %}
 
-          <select name="id" class="no-js" data-product-select>
-            {% for variant in product.variants %}
-              <option
-                {% if variant == current_variant %}selected="selected"{% endif %}
-                {% unless variant.available %}disabled="disabled"{% endunless %}
-                value="{{ variant.id }}">
-                  {{ variant.title }}
-              </option>
-            {% endfor %}
-          </select>
+        <select name="id" class="no-js" data-product-select>
+          {% for variant in product.variants %}
+            <option
+              {% if variant == current_variant %}selected="selected"{% endif %}
+              {% unless variant.available %}disabled="disabled"{% endunless %}
+              value="{{ variant.id }}">
+                {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
 
-          <div class="product__option">
-            <label for="Quantity" class="product__option__label">{{ 'products.product.quantity' | t }}</label>
-            <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product__option__input" size="2">
-          </div>
+        <div class="product__option">
+          {% comment %}<label for="Quantity" class="product__option__label">{{ 'products.product.quantity' | t }}</label>{% endcomment %}
+          <input type="number" id="Quantity" name="quantity" value="1" min="1" class="product__option__field product__option__input" size="2">
         </div>
 
         <button
@@ -123,7 +129,7 @@
 
     </div>
 
-    <div class="col col-7 xs-col-12 rte">
+    <div class="col col-7 sm-col-8 xs-col-12 rte">
       {{ product.description }}
     </div>
 

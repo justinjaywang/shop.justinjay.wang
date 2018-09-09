@@ -10,7 +10,7 @@
   }
 
   a {
-    text-decoration: underline;
+    @extend %faded-light;
     @extend %fade;
   }
 

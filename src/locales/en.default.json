@@ -101,9 +101,11 @@
       "empty": "Your cart is currently empty.",
       "cookies_required": "Enable cookies to use the shopping cart",
       "continue_browsing_html":
-        "<a href=\"/\">Start shoppin’</a>.",
+        "<a href=\"/\">Start shopping</a>.",
       "item_quantity": "Item quantity",
-      "savings": "You're saving"
+      "savings": "You're saving",
+      "tax": "Taxes",
+      "shipping": "Shipping"
     },
     "label": {
       "product": "Product",

@@ -98,16 +98,27 @@
     opacity: $opacity--faded;
   }
 }
-%faded,
-.faded {
-  opacity: $opacity--faded;
-}
 %fade-light,
 .fade-light {
   transition: opacity $duration--normal;
   &:hover {
-    opacity: $opacity--light;
+    opacity: $opacity--faded--light;
   }
+}
+%faded,
+.faded {
+  color: rgba($color--fg, $opacity--faded);
+}
+%faded-light,
+.faded-light {
+  color: rgba($color--fg, 0.6);
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
 }
 
 .align-left {

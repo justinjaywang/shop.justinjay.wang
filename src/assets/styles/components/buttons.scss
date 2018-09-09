@@ -9,14 +9,20 @@
   background-color: $color--fg;
   border: 1px solid $color--fg;
   color: $color--bg;
-  padding: ($v / 3) $v;
-  @extend %fade-light;
+  padding: ($v / 4) ($v * 1);
+  transition: opacity $duration--normal;
+  &:hover {
+    opacity: $opacity--faded--light;
+  }
 }
 
 .button--light {
   background-color: $color--bg;
   border: 1px solid currentColor;
   color: $color--fg;
+  &:hover {
+    opacity: $opacity--faded;
+  }
 }
 
 .button + .button {

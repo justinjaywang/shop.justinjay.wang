@@ -1,6 +1,10 @@
 <div class="cart container container--wide">
   {% if cart.item_count > 0 %}
     
+    <div class="faded">
+      <a href="/" class="fade">Home</a> / {{ 'layout.cart.title' | t }} ({{ cart.item_count }})
+    </div>
+
     <form action="/cart" method="post" novalidate>
 
       <ul class="cart__items">
@@ -10,75 +14,72 @@
 
               <div class="row">
 
-                <div class="col col-4">
+                <div class="col col-3">
                   {% if item.image != blank %}
                     <a href="{{ item.url | within: collections.all }}" class="fade-light block">
-                      {{ item | img_url: '240x' | img_tag: item.title }}
+                      {{ item | img_url: '240x240', crop: 'center' | img_tag: item.title }}
                     </a>
                   {% endif %}
                 </div>
 
-                <div class="col col-8">
+                <div class="col col-9">
                   <div class="cart__item__meta">
-                    <h2>
-                      <a href="{{ item.url }}" class="fade">
+                    <a href="{{ item.url }}" class="fade block">
+                      <h2>
                         {{ item.product.title }}
-                      </a>
-                    </h2>
+                      </h2>
 
-                    <strong data-label="{{ 'cart.label.price' | t }}">
-                      {% if item.original_line_price != item.line_price %}
-                        <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
-                        {{ item.price | money_without_trailing_zeros }}
-                        <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
-                        <s>{{ item.original_price | money_without_trailing_zeros }}</s>
-                      {% else %}
-                        {{ item.price | money_without_trailing_zeros }}
-                      {% endif %}
-                    </strong>
+                      <strong data-label="{{ 'cart.label.price' | t }}">
+                        {% if item.original_line_price != item.line_price %}
+                          <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                          {{ item.price | money_without_trailing_zeros }}
+                          <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                          <s>{{ item.original_price | money_without_trailing_zeros }}</s>
+                        {% else %}
+                          {{ item.price | money_without_trailing_zeros }}
+                        {% endif %}
+                      </strong>
+                    </a>
                   </div>
 
-                  <div class="cart__item__options">
-                    <div class="cart__item__option faded">
+                  <div class="cart__item__options faded">
 
-                      {% unless item.variant.title contains 'Default' %}
-                        {% for option in item.product.options %}
-                          {{ option }}&ensp;{{ item.variant.options[forloop.index0] }}
-                          &ensp;/&ensp;
-                        {% endfor %}
-                      {% endunless %}
+                    {% unless item.variant.title contains 'Default' %}
+                      {% for option in item.product.options %}
+                        {{ option }}: {{ item.variant.options[forloop.index0] }}
+                      {% endfor %}
+                    {% endunless %}
 
-                      {%- assign property_size = item.properties | size -%}
+                    {%- assign property_size = item.properties | size -%}
 
-                      {% if property_size > 0 %}
-                        {% for p in item.properties %}
-                          {% unless p.last == blank %}
-                          {{ p.first }}:
+                    {% if property_size > 0 %}
+                      {% for p in item.properties %}
+                        {% unless p.last == blank %}
+                        {{ p.first }}:
 
-                          {% if p.last contains '/uploads/' %}
-                            <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
-                          {% else %}
-                            {{ p.last }}
-                          {% endif %}
+                        {% if p.last contains '/uploads/' %}
+                          <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                        {% else %}
+                          {{ p.last }}
+                        {% endif %}
 
-                          {% endunless %}
-                        {% endfor %}
-                      {% endif %}
-                    </div>
+                        {% endunless %}
+                      {% endfor %}
+                    {% endif %}
 
-                    <div class="cart__item__option">
-                      <div data-label="{{ 'cart.label.quantity' | t }}">
-                        <span class="faded">{{ 'cart.label.quantity' | t }}</span>
-                        <input type="number"
-                               name="updates[]"
-                               id="updates_{{ item.key }}"
-                               value="{{ item.quantity }}"
-                               min="0"
-                               aria-label="{{ 'cart.general.item_quantity' | t }}"
-                               class="cart__item__option__input">
-                      </div>
-                    </div>
                   </div><!-- end .cart__item__options -->
+
+                  <div class="cart__item__quantity">
+                    <div data-label="{{ 'cart.label.quantity' | t }}">
+                      <input type="number"
+                             name="updates[]"
+                             id="updates_{{ item.key }}"
+                             value="{{ item.quantity }}"
+                             min="0"
+                             aria-label="{{ 'cart.general.item_quantity' | t }}"
+                             class="cart__item__option__field">
+                    </div>
+                  </div>
 
                   <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="cart__item__remove">
                     ×
@@ -185,12 +186,9 @@
       {% endif %}{% endcomment %}
 
       <div class="row mbv2">
-        <div class="col col-7 xs-col-12">
-          <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="cart__update fade">
-        </div>
-        <div class="col col-5 xs-col-12">
+        <div class="col col-12 sm-col-12 ml-auto">
           <div class="row">
-            <div class="col col-9 faded">
+            <div class="col col-9">
               <span>{{ 'cart.general.subtotal' | t }} ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})</span>
             </div>
             <div class="col col-3 align-right">
@@ -200,13 +198,27 @@
               {% endif %}
             </div>
           </div>
+          <div class="row">
+            <div class="col col-9">
+              <span>{{ 'cart.general.tax' | t }}</span>
+            </div>
+            <div class="col col-3 align-right">TBD
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-9">
+              <span>{{ 'cart.general.shipping' | t }}</span>
+            </div>
+            <div class="col col-3 align-right">TBD
+            </div>
+          </div>
+          <div class="cart__checkout mtv2">
+            <input type="submit" name="update" value="{{ 'cart.general.update' | t }}" class="cart__update button button--light cart__checkout__item">
+            <input type="submit" name="checkout" class="button cart__checkout__item" value="{{ 'cart.general.checkout' | t }}">
+          </div>      
         </div>
       </div>
 
-      <p class="faded mbv1">{{ 'cart.general.shipping_at_checkout' | t }}</p>
-      
-      <a class="button button--light" href="/">Back to Shopping</a>
-      <input type="submit" name="checkout" class="button" value="{{ 'cart.general.checkout' | t }}">
     </form>
   {% else %}
     {% comment %}

@@ -1,15 +1,16 @@
 .product__thumbnails {
-  margin-top: $v * 0.75;
+  margin-top: $v * 0.5;
   display: flex;
 }
 
 .product__thumbnail {
-  width: 8em;
-  margin-right: $v * 0.75;
-  margin-bottom: $v * 0.75;
+  width: 6em;
+  margin-right: $v * 0.5;
+  margin-bottom: $v * 0.5;
 }
 
 .product-single__thumbnail-image {
+  display: block;
   @extend %fade-light;
 
   .active-thumbnail & {
@@ -25,47 +26,48 @@
   margin-bottom: $v * 0.75;
 }
 
-.product__options {
-  margin-bottom: $v * 0.75;
+.product__form {
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $v * 1.5;
+
+  > * {
+    margin-bottom: $v * 0.5;
+  }
 }
 
-.product__option__label {
-  opacity: $opacity--faded;
+.product__option {
+  position: relative;
+}
+
+%product__option__field,
+.product__option__field {
+  padding: ($v / 4) ($v / 4) ($v / 4) ($v / 3);
+  margin-right: $v * 0.5;
+  border: 1px solid rgba($color--fg, 1);
+  background-color: transparent;
+  width: 2.75em;
+  transition: border-color $duration--normal;
+  border: 1px solid rgba($color--fg, 0.2);
+
+  &:hover,
+  &:focus {
+    border-color: $color--fg;
+  }
+}
+
+.caret {
+  &:after {
+    content: "▾";
+    position: absolute;
+    right: 1.5em;
+    top: 0.65em;
+    font-size: 0.75em;
+  }
 }
 
 .product__option__select {
-  text-align: center;
   cursor: pointer;
   appearance: none;
-  background-color: transparent;
-  transition: opacity $duration--normal;
-  border: 0;
-  padding-left: 0.2em;
-  padding-right: 0.2em;
-
-  &:hover {
-    opacity: $opacity--faded;
-  }
-}
-
-%product__option__input,
-.product__option__input {
-  padding: 0 0.2em;
-  transition: opacity $duration--normal;
-  border: 0;
-  max-width: 2.5em;
-
-  &:hover {
-    opacity: $opacity--faded;
-  }
-
-  &:focus {
-    opacity: 1;
-  }
-}
-
-.product__button {
-  margin-bottom: $v * 1.5;
-  display: block;
+  padding-right: ($v * 0.4);
 }
